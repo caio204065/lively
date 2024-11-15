@@ -80,7 +80,14 @@
     </div>
   </div>
   <button id="closePlayer" style="position: absolute; top: 20px; right: 20px; padding: 10px 20px; background: #ff0099; color: #fff; border: none; border-radius: 5px; cursor: pointer; z-index: 1100;">Fechar</button>
-</div>
+</div>
+<div id="videoPlayer" style="display: none; position: fixed; top: 0; left: 0; width: 100%; height: 100%; background: rgba(0, 0, 0, 0.9); z-index: 1000;">
+  <video id="gameplayVideo" controls style="width: 100%; height: 100%; object-fit: cover;" autoplay>
+    <source src="https://cdn.glitch.me/a1edb1e1-27cb-4f54-a59c-9ecd7ca713d2/Starships_ULTRA.webm?v=1726023553264" type="video/webm">
+    Seu navegador não suporta o elemento de vídeo.
+  </video>
+  <button id="closePlayer" style="position: absolute; top: 20px; right: 20px; padding: 10px 20px; background: #ff0099; color: #fff; border: none; border-radius: 5px; cursor: pointer; z-index: 1100;">Fechar</button>
+</div>
 <script src="script.js"></script>
 </body>
 </html>
