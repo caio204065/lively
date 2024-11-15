@@ -1,8 +1,8 @@
+// Script para reprodução de vídeo em tela cheia
 document.addEventListener("DOMContentLoaded", () => {
   const items = document.querySelectorAll(".item");
   const videoPlayer = document.getElementById("videoPlayer");
   const gameplayVideo = document.getElementById("gameplayVideo");
-  const audio = document.getElementById("audio");
   const closePlayer = document.getElementById("closePlayer");
 
   // Adiciona evento de clique em cada item
@@ -11,7 +11,6 @@ document.addEventListener("DOMContentLoaded", () => {
       // Mostra o player de vídeo
       videoPlayer.style.display = "block";
       gameplayVideo.play();
-      audio.play();  // Toca o áudio junto com o vídeo
 
       // Entra em tela cheia
       if (videoPlayer.requestFullscreen) {
@@ -27,9 +26,7 @@ document.addEventListener("DOMContentLoaded", () => {
   // Fecha o player de vídeo
   closePlayer.addEventListener("click", () => {
     gameplayVideo.pause();
-    audio.pause();  // Para o áudio quando o vídeo for fechado
     gameplayVideo.currentTime = 0; // Reinicia o vídeo
-    audio.currentTime = 0; // Reinicia o áudio
     videoPlayer.style.display = "none";
 
     // Sai do modo tela cheia
