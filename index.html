@@ -1,12 +1,96 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="pt-BR">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>starzyx</title>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Menu de Músicas</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      min-height: 100vh;
+      margin: 0;
+      background-color: #f4f4f4;
+    }
+
+    .menu {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 20px;
+      padding: 10px;
+    }
+
+    .item {
+      text-align: center;
+      width: 150px;
+    }
+
+    .item img {
+      width: 150px;
+      height: 150px;
+      border-radius: 10px;
+      object-fit: cover;
+      box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+      transition: transform 0.2s;
+    }
+
+    .item img:hover {
+      transform: scale(1.05);
+    }
+
+    .title {
+      font-size: 16px;
+      font-weight: bold;
+      margin: 10px 0 5px;
+    }
+
+    .artist {
+      font-size: 14px;
+      color: #555;
+    }
+  </style>
 </head>
 <body>
-   <h1>JUST DANCE FIRE</h1>
-    <hr style="border: none; height: 2px; background: linear-gradient(to right, #f00, #00f); box-shadow: 0 2px 5px rgba(0,0,0,0.2);">
+  <div class="menu">
+    <div class="item">
+      <img src="https://assets.onecompiler.app/42wnryh5y/42y8jbfdz/Design%20sem%20nome%20(1).png" alt="Capa da música">
+      <div class="title">Nome da Música 1</div>
+      <div class="artist">Artista 1</div>
+    </div>
+    <div class="item">
+      <img src="capa2.jpg" alt="Capa da música">
+      <div class="title">Nome da Música 2</div>
+      <div class="artist">Artista 2</div>
+    </div>
+    <div class="item">
+      <img src="capa3.jpg" alt="Capa da música">
+      <div class="title">Nome da Música 3</div>
+      <div class="artist">Artista 3</div>
+    </div>
+    <!-- Adicione mais itens conforme necessário -->
+  </div>
+  <div class="menu">
+  <div class="item" id="video1">
+    <img src="imagens/capa1.jpg" alt="Capa da Música">
+    <div class="overlay">
+      <div class="title">Música 1</div>
+      <div class="artist">Artista 1</div>
+    </div>
+  </div>
+ <div id="videoPlayer" style="display: none; position: fixed; top: 0; left: 0; width: 100%; height: 100%; background: rgba(0, 0, 0, 0.9); z-index: 1000;">
+  <video id="gameplayVideo" controls style="width: 100%; height: 100%; object-fit: cover;" autoplay>
+    <source src="https://cdn.glitch.me/a1edb1e1-27cb-4f54-a59c-9ecd7ca713d2/Starships_ULTRA.webm?v=1726023553264" type="video/webm">
+    Seu navegador não suporta o elemento de vídeo.
+  </video>
+  <audio id="audio" autoplay>
+    <source src="https://cdn.glitch.global/a1edb1e1-27cb-4f54-a59c-9ecd7ca713d2/Starships.ogg?v=1726023664657" type="audio/ogg">
+    Seu navegador não suporta o elemento de áudio.
+  </audio>
+  <button id="closePlayer" style="position: absolute; top: 20px; right: 20px; padding: 10px 20px; background: #ff0099; color: #fff; border: none; border-radius: 5px; cursor: pointer; z-index: 1100;">Fechar</button>
+</div>
+
+<script src="script.js"></script>
 </body>
 </html>
