@@ -152,6 +152,20 @@
   // Carregar as músicas ao carregar a página
   window.onload = loadSongs;
 </script>
+// Voltar para o menu após o vídeo terminar
+      videoPlayer.onended = () => {
+        goToMenu();
+      };
+    }
 
+    // Função para voltar ao menu
+    function goToMenu() {
+      document.getElementById("menu").style.display = "block";
+      document.getElementById("player").style.display = "none";
+    }
+
+    // Carregar o menu ao iniciar a página
+    window.onload = loadMenu;
+  </script>
 </body>
 </html>
