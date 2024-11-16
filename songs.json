@@ -1,0 +1,74 @@
+{
+  "songs": [
+    {
+      "title": "Spice Up Your Life",
+      "artist": "The Spice Girls",
+      "edition": "Just Dance 2",
+      "image": "https://cdn.glitch.global/a1edb1e1-27cb-4f54-a59c-9ecd7ca713d2/SpiceUpYourLife.png?v=1731720283324",
+      "video": "https://cdn.glitch.me/a1edb1e1-27cb-4f54-a59c-9ecd7ca713d2/Just%20Dance%202%20-%20Spice%20Up%20Your%20Life%20by%20The%20Spice%20Girls(1080P_HD)(480P).mp4?v=1731715330092"
+    },
+    {
+      "title": "Padam Padam",
+      "artist": "Kylie Minogue",
+      "edition": "Just Dance 2025",
+      "image": "https://cdn.glitch.global/a1edb1e1-27cb-4f54-a59c-9ecd7ca713d2/PadamALT_Cover_2x.png?v=1731716559182",
+      "video": "https://cdn.glitch.me/a1edb1e1-27cb-4f54-a59c-9ecd7ca713d2/Just%20Dance%202025%20Edition%20-%20Padam%20Padam%20by%20Kylie%20Minogue%20%5BNOHUD%5D(720P_60FPS).mp4?v=1731717244108"
+    },
+    {
+      "title": "Pink Venom",
+      "artist": "BLACKPINK",
+      "edition": "Just Dance 2025",
+      "image": "https://cdn.glitch.global/a1edb1e1-27cb-4f54-a59c-9ecd7ca713d2/PinkVenom.png?v=1731718787729",
+      "video": "https://cdn.glitch.me/a1edb1e1-27cb-4f54-a59c-9ecd7ca713d2/Just%20Dance%202025%20Edition%20-%20Pink%20Venom%20by%20BLACKPINK%20%5BNOHUD%5D(1080P_HD)(720P_60FPS).mp4?v=1731718720587"
+    },
+    {
+      "title": "break up with your girlfriend, i'm bored",
+      "artist": "Ariana Grande",
+      "edition": "Just Dance 2025",
+      "image": "https://cdn.glitch.global/a1edb1e1-27cb-4f54-a59c-9ecd7ca713d2/BreakUp.png?v=1731718788545",
+      "video": "https://cdn.glitch.me/a1edb1e1-27cb-4f54-a59c-9ecd7ca713d2/Just%20Dance%202025%20Edition%20-%20break%20up%20with%20your%20girlfriend_%20i_m%20bored%20by%20Ariana%20Grande%20%5BNOHUD%5D(1080P_HD)(720P_60FPS).mp4?v=1731718686795"
+    },
+    {
+      "title": "Stop This Fire",
+      "artist": "Nius",
+      "edition": "Just Dance 2025",
+      "image": "https://cdn.glitch.global/a1edb1e1-27cb-4f54-a59c-9ecd7ca713d2/StopThisFire.png?v=1731718792985",
+      "video": "https://cdn.glitch.me/a1edb1e1-27cb-4f54-a59c-9ecd7ca713d2/Just%20Dance%202025%20Edition%20-%20Stop%20This%20Fire%20by%20Nius%20%5BNOHUD%5D(720P_60FPS).mp4?v=1731718689822"
+    },
+    {
+      "title": "Good Ones",
+      "artist": "Charli XCX",
+      "edition": "Just Dance 2023",
+      "image": "https://cdn.glitch.global/a1edb1e1-27cb-4f54-a59c-9ecd7ca713d2/GoodOnes.png?v=1731724226348",
+      "video": "https://cdn.glitch.me/a1edb1e1-27cb-4f54-a59c-9ecd7ca713d2/goodones_0e09fa9159dbc9ed67e67b0d9957022d3fdac465_576p.mp4?v=1731724168109"
+    },
+    {
+      "title": "Boom Clap",
+      "artist": "Charli XCX",
+      "edition": "Just Dance 2015",
+      "image": "https://cdn.glitch.global/a1edb1e1-27cb-4f54-a59c-9ecd7ca713d2/boomclapdlc_cover.jpg?v=1731724196860",
+      "video": "https://cdn.glitch.me/a1edb1e1-27cb-4f54-a59c-9ecd7ca713d2/boomclapdlc_0d8efaea4666c462c1078e77ea5af75d38e1fbcf_576p.mp4?v=1731724234129"
+    },
+    {
+      "title": "Break My Heart",
+      "artist": "Dua Lipa",
+      "edition": "Just Dance 2022",
+      "image": "https://cdn.glitch.global/a1edb1e1-27cb-4f54-a59c-9ecd7ca713d2/breakmyheart_cover.jpg?v=1731725307581",
+      "video": "https://cdn.glitch.me/a1edb1e1-27cb-4f54-a59c-9ecd7ca713d2/breakmyheart_ca4d02b36f3f7d58d6c3259681e85d41a7d4edb9_576p.mp4?v=1731725261324"
+    },
+    {
+      "title": "You Don't Know Me",
+      "artist": "Jax Jones Ft. RAYE",
+      "edition": "Just Dance 2019",
+      "image": "https://cdn.glitch.global/a1edb1e1-27cb-4f54-a59c-9ecd7ca713d2/dontknowme_cover.jpg?v=1731725367419",
+      "video": "https://cdn.glitch.me/a1edb1e1-27cb-4f54-a59c-9ecd7ca713d2/dontknowme_29966a535b946d25698ed19473bb0d12dfb89800_576p.mp4?v=1731725409416"
+    },
+    {
+      "title": "Bang",
+      "artist": "Anitta",
+      "edition": "Just Dance 2017",
+      "image": "https://cdn.glitch.global/a1edb1e1-27cb-4f54-a59c-9ecd7ca713d2/bang_cover.jpg?v=1731725691450",
+      "video": "https://cdn.glitch.me/a1edb1e1-27cb-4f54-a59c-9ecd7ca713d2/bang_06f667ecd5f4bc033228f368931e9e863e6fbca4_576p.mp4?v=1731725708703"
+    }
+  ]
+}
