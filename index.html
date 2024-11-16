@@ -224,6 +224,15 @@
     document.getElementById('songsMenu').scrollIntoView();
   }
 
+  // Função para redirecionar ao menu após o vídeo terminar
+  function videoEnded() {
+    closeGameplay();
+    document.getElementById('songsMenu').scrollIntoView();
+  }
+
+  // Adiciona o evento de término do vídeo
+  document.getElementById('gameplayVideo').addEventListener('ended', videoEnded);
+
   // Controle da engrenagem
   let settingsTimeout;
 
