@@ -10,35 +10,35 @@
     {
       "title": "Padam Padam",
       "artist": "Kylie Minogue",
-      "edition": "Just Dance 2025",
+      "edition": "Just Dance 2025 Edition",
       "image": "https://cdn.glitch.global/a1edb1e1-27cb-4f54-a59c-9ecd7ca713d2/PadamALT_Cover_2x.png?v=1731716559182",
       "video": "https://cdn.glitch.me/a1edb1e1-27cb-4f54-a59c-9ecd7ca713d2/Just%20Dance%202025%20Edition%20-%20Padam%20Padam%20by%20Kylie%20Minogue%20%5BNOHUD%5D(720P_60FPS).mp4?v=1731717244108"
     },
     {
       "title": "Pink Venom",
       "artist": "BLACKPINK",
-      "edition": "Just Dance 2025",
+      "edition": "Just Dance 2025 Edition",
       "image": "https://cdn.glitch.global/a1edb1e1-27cb-4f54-a59c-9ecd7ca713d2/PinkVenom.png?v=1731718787729",
       "video": "https://cdn.glitch.me/a1edb1e1-27cb-4f54-a59c-9ecd7ca713d2/Just%20Dance%202025%20Edition%20-%20Pink%20Venom%20by%20BLACKPINK%20%5BNOHUD%5D(1080P_HD)(720P_60FPS).mp4?v=1731718720587"
     },
     {
       "title": "break up with your girlfriend, i'm bored",
       "artist": "Ariana Grande",
-      "edition": "Just Dance 2025",
+      "edition": "Just Dance 2025 Edition",
       "image": "https://cdn.glitch.global/a1edb1e1-27cb-4f54-a59c-9ecd7ca713d2/BreakUp.png?v=1731718788545",
       "video": "https://cdn.glitch.me/a1edb1e1-27cb-4f54-a59c-9ecd7ca713d2/Just%20Dance%202025%20Edition%20-%20break%20up%20with%20your%20girlfriend_%20i_m%20bored%20by%20Ariana%20Grande%20%5BNOHUD%5D(1080P_HD)(720P_60FPS).mp4?v=1731718686795"
     },
     {
       "title": "Stop This Fire",
       "artist": "Nius",
-      "edition": "Just Dance 2025",
+      "edition": "Just Dance 2025 Edition",
       "image": "https://cdn.glitch.global/a1edb1e1-27cb-4f54-a59c-9ecd7ca713d2/StopThisFire.png?v=1731718792985",
       "video": "https://cdn.glitch.me/a1edb1e1-27cb-4f54-a59c-9ecd7ca713d2/Just%20Dance%202025%20Edition%20-%20Stop%20This%20Fire%20by%20Nius%20%5BNOHUD%5D(720P_60FPS).mp4?v=1731718689822"
     },
     {
       "title": "Good Ones",
       "artist": "Charli XCX",
-      "edition": "Just Dance 2023",
+      "edition": "Just Dance 2023 Edition",
       "image": "https://cdn.glitch.global/a1edb1e1-27cb-4f54-a59c-9ecd7ca713d2/GoodOnes.png?v=1731724226348",
       "video": "https://cdn.glitch.me/a1edb1e1-27cb-4f54-a59c-9ecd7ca713d2/goodones_0e09fa9159dbc9ed67e67b0d9957022d3fdac465_576p.mp4?v=1731724168109"
     },
@@ -73,7 +73,7 @@
     {
       "title": "CAN'T STOP THE FEELING!",
       "artist": "Justin Timberlake",
-      "edition": "Just Dance 2023",
+      "edition": "Just Dance 2023 Edition",
       "image": "https://cdn.glitch.global/a1edb1e1-27cb-4f54-a59c-9ecd7ca713d2/cantstopthefeeling_cover.jpg?v=1731773815029",
       "video": "https://cdn.glitch.me/a1edb1e1-27cb-4f54-a59c-9ecd7ca713d2/cantstopthefeeling_26259959e6c04e62a544021d1e500c42ff7b9c45_576p.mp4?v=1731773888280"
     },
@@ -202,6 +202,13 @@
   "edition": "Just Dance 2021",
   "image": "https://cdn.glitch.global/f26fabe1-0d65-4a52-b5f1-a029423de2b6/sayso_cover.jpg?v=1731797903121",
   "video": "https://cdn.glitch.me/f26fabe1-0d65-4a52-b5f1-a029423de2b6/sayso_f81ef015be2b81807e1c1ac25b77db3bde988b0d_576p.mp4?v=1731797966593"
+},
+    {
+  "title": "1999",
+  "artist": "Charli XCX & Troye Sivan",
+  "edition": "Just Dance 2020",
+  "image": "https://cdn.glitch.global/f26fabe1-0d65-4a52-b5f1-a029423de2b6/1999_cover.jpg?v=1731798679004",
+  "video": "https://cdn.glitch.me/f26fabe1-0d65-4a52-b5f1-a029423de2b6/1999_044fc119808d40f27e6bdc7562b2dc72173676b8_576p.mp4?v=1731798721381"
 }
   ]
 }
