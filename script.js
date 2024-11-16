@@ -5,12 +5,11 @@ document.addEventListener("DOMContentLoaded", () => {
   const gameplayVideo = document.getElementById("gameplayVideo");
   const backButton = document.getElementById("backButton");
 
-  // Evento de clique em cada capa
   items.forEach((item) => {
     item.addEventListener("click", () => {
       const videoUrl = item.getAttribute("data-video");
 
-      // Configura o vídeo a ser reproduzido
+      // Define a URL do vídeo e força o carregamento
       gameplayVideo.querySelector("source").src = videoUrl;
       gameplayVideo.load();
 
@@ -18,15 +17,14 @@ document.addEventListener("DOMContentLoaded", () => {
       menu.style.display = "none";
       gameplayContainer.style.display = "flex";
 
-      // Reproduz o vídeo
+      // Inicia o vídeo automaticamente com o autoplay
       gameplayVideo.play();
     });
   });
 
-  // Botão "Voltar"
   backButton.addEventListener("click", () => {
-    // Pausa o vídeo
     gameplayVideo.pause();
+    gameplayVideo.currentTime = 0;
 
     // Retorna ao menu
     menu.style.display = "flex";
