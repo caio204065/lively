@@ -92,69 +92,7 @@
       cursor: pointer;
       z-index: 10;
     }
-<!-- Ícone da Engrenagem -->
-<div id="gearIcon" class="gear-icon" onclick="toggleSettingsMenu()">
-  <img src="https://cdn.glitch.global/a1edb1e1-27cb-4f54-a59c-9ecd7ca713d2/3706880-control-fix-gear-option-setting_108710.png?v=1731730451966" alt="Configurações" />
-</div>
 
-<!-- Menu de Configurações -->
-<div id="settingsMenu" class="settings-menu" style="display: none;">
-  <ul>
-    <li><button onclick="pauseVideo()">Pausar</button></li>
-    <li><button onclick="resumeVideo()">Continuar</button></li>
-    <li><button onclick="exitGame()">Sair</button></li>
-  </ul>
-</div>
-
-<!-- Estilos para a Engrenagem e Menu -->
-<style>
-  .gear-icon {
-    position: fixed;
-    top: 20px;
-    right: 20px;
-    cursor: pointer;
-    z-index: 1000;
-  }
-
-  .gear-icon img {
-    width: 40px;
-    height: 40px;
-  }
-
-  .settings-menu {
-    position: fixed;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    background-color: rgba(0, 0, 0, 0.7);
-    padding: 20px;
-    border-radius: 10px;
-    color: white;
-    display: none;
-    z-index: 999;
-  }
-
-  .settings-menu ul {
-    list-style: none;
-    padding: 0;
-  }
-
-  .settings-menu li {
-    margin: 10px 0;
-  }
-
-  .settings-menu button {
-    background-color: #f1f1f1;
-    color: black;
-    padding: 10px;
-    border: none;
-    cursor: pointer;
-    width: 100%;
-  }
-
-  .settings-menu button:hover {
-    background-color: #ccc;
-  }
   </style>
 </head>
 <body>
