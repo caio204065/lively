@@ -229,6 +229,32 @@
 
     // Carregar o menu ao iniciar a página
     window.onload = loadMenu;
+// Função para mostrar ou esconder o menu de configurações
+function toggleSettingsMenu() {
+  const settingsMenu = document.getElementById("settingsMenu");
+  if (settingsMenu.style.display === "none" || settingsMenu.style.display === "") {
+    settingsMenu.style.display = "block";
+  } else {
+    settingsMenu.style.display = "none";
+  }
+}
+
+// Função para pausar o vídeo
+function pauseVideo() {
+  const videoPlayer = document.getElementById("videoPlayer");
+  videoPlayer.pause();
+}
+
+// Função para continuar o vídeo
+function resumeVideo() {
+  const videoPlayer = document.getElementById("videoPlayer");
+  videoPlayer.play();
+}
+
+// Função para sair do jogo (voltar ao menu)
+function exitGame() {
+  goToMenu();
+}
   </script>
 </body>
 </html>
