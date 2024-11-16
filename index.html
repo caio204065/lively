@@ -16,15 +16,15 @@
     }
 
     .menu {
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-      gap: 20px;
+      display: grid;
+      grid-template-columns: repeat(4, 1fr); /* 4 colunas */
+      gap: 20px; /* Espaço entre os itens */
       padding: 20px;
+      justify-items: center; /* Alinha os itens no centro */
     }
 
     .item {
-      width: 320px;
+      width: 280px; /* Ajuste para um tamanho mais compacto */
       text-align: center;
       cursor: pointer;
       border: 4px solid rgba(0, 0, 0, 0);
@@ -146,7 +146,7 @@
     <div class="edition">Just Dance 2023</div>
   </div>
 
-  <!-- Música 7 -->
+   <!-- Música 7 -->
   <div class="item" data-video="https://cdn.glitch.me/a1edb1e1-27cb-4f54-a59c-9ecd7ca713d2/boomclapdlc_0d8efaea4666c462c1078e77ea5af75d38e1fbcf_576p.mp4?v=1731724234129">
     <img src="https://cdn.glitch.global/a1edb1e1-27cb-4f54-a59c-9ecd7ca713d2/boomclapdlc_cover.jpg?v=1731724196860" alt="Música 7">
     <div class="title">Boom Clap</div>
@@ -179,46 +179,35 @@
   </div>
 </div>
 
-<!-- Container da gameplay -->
+<!-- Container de gameplay -->
 <div id="gameplayContainer">
-  <button id="backButton">Voltar</button>
-  <video id="gameplayVideo" autoplay>
-    <source src="" type="video/mp4">
-    Seu navegador não suporta vídeos.
-  </video>
+  <video id="gameplayVideo" controls></video>
+  <button id="backButton" onclick="closeGameplay()">Voltar</button>
 </div>
 
 <script>
-  const items = document.querySelectorAll('.item');
-  const gameplayContainer = document.getElementById('gameplayContainer');
-  const gameplayVideo = document.getElementById('gameplayVideo');
-  const backButton = document.getElementById('backButton');
-
-  items.forEach(item => {
-    item.addEventListener('click', () => {
-      const videoSrc = item.getAttribute('data-video');
-      gameplayVideo.src = videoSrc;
-      gameplayContainer.style.display = 'block';
-      gameplayVideo.play();
+  // Função para abrir o vídeo
+  document.querySelectorAll('.item').forEach(item => {
+    item.addEventListener('click', function () {
+      const videoUrl = this.getAttribute('data-video');
+      const videoElement = document.getElementById('gameplayVideo');
+      const container = document.getElementById('gameplayContainer');
+      videoElement.src = videoUrl;
+      container.style.display = 'block';
+      videoElement.play();
     });
   });
 
-  backButton.addEventListener('click', () => {
-    gameplayContainer.style.display = 'none';
-    gameplayVideo.pause();
-    gameplayVideo.src = '';
-  });
-
-  // Retorna ao menu ao fim do vídeo
-  gameplayVideo.addEventListener('ended', () => {
-    gameplayContainer.style.display = 'none';
-    gameplayVideo.src = '';
-  });
+  // Função para fechar o vídeo
+  function closeGameplay() {
+    const videoElement = document.getElementById('gameplayVideo');
+    const container = document.getElementById('gameplayContainer');
+    videoElement.pause();
+    videoElement.currentTime = 0;
+    container.style.display = 'none';
+  }
 </script>
 
 </body>
 </html>
-
-
-
 
