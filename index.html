@@ -224,6 +224,11 @@
     document.getElementById('songsMenu').scrollIntoView();
   }
 
+  // Função para detectar quando a música termina e voltar ao menu
+  function videoEnded() {
+    exitGame();
+  }
+
   // Controle da engrenagem
   let settingsTimeout;
 
@@ -255,6 +260,9 @@
 
   // Carregar as músicas ao carregar a página
   window.onload = loadSongs;
+
+  // Evento de término do vídeo para voltar ao menu
+  document.getElementById('gameplayVideo').addEventListener('ended', videoEnded);
 </script>
 
 </body>
