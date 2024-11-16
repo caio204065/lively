@@ -4,38 +4,31 @@ document.addEventListener("DOMContentLoaded", () => {
   const gameplayContainer = document.getElementById("gameplayContainer");
   const gameplayVideo = document.getElementById("gameplayVideo");
   const backButton = document.getElementById("backButton");
-  const songTitle = document.getElementById("songTitle");
-  const songArtist = document.getElementById("songArtist");
 
-  // Adiciona evento de clique em cada item
+  // Evento de clique em cada capa
   items.forEach((item) => {
     item.addEventListener("click", () => {
       const videoUrl = item.getAttribute("data-video");
-      const title = item.getAttribute("data-title");
-      const artist = item.getAttribute("data-artist");
 
-      // Configura as fontes do vídeo e define os textos
+      // Configura o vídeo a ser reproduzido
       gameplayVideo.querySelector("source").src = videoUrl;
-      songTitle.textContent = title;
-      songArtist.textContent = artist;
-
-      // Recarrega o elemento para aplicar a nova fonte
       gameplayVideo.load();
 
-      // Inicia a reprodução
-      gameplayVideo.play();
-
-      // Mostra o container da gameplay e esconde o menu
+      // Mostra o container do vídeo
       menu.style.display = "none";
       gameplayContainer.style.display = "flex";
+
+      // Reproduz o vídeo
+      gameplayVideo.play();
     });
   });
 
   // Botão "Voltar"
   backButton.addEventListener("click", () => {
+    // Pausa o vídeo
     gameplayVideo.pause();
 
-    // Mostra o menu e esconde o container da gameplay
+    // Retorna ao menu
     menu.style.display = "flex";
     gameplayContainer.style.display = "none";
   });
