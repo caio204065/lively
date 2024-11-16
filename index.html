@@ -146,62 +146,124 @@
 <!-- Container de gameplay -->
 <div id="gameplayContainer">
   <video id="gameplayVideo" autoplay></video>
-  <button id="backButton" onclick="closeGameplay()">Voltar</button>
+  <button id="backButton" onclick="closeGameplay()">back</button>
   <div id="settingsButton" onclick="toggleSettingsMenu()">⚙️</div>
 </div>
 
 <!-- Menu de configurações -->
 <div id="settingsMenu">
-  <button onclick="restartMusic()">Reiniciar Música</button>
-  <button onclick="pauseVideo()">Pausar Música</button>
-  <button onclick="resumeVideo()">Continuar Música</button>
-  <button onclick="exitGame()">Sair para o Menu</button>
+  <button onclick="restartMusic()">Reset Song</button>
+  <button onclick="pauseVideo()">Pause SOng</button>
+  <button onclick="resumeVideo()">Resume Song</button>
+  <button onclick="exitGame()">Exit Game</button>
 </div>
 
 <script>
-  // Traduções armazenadas localmente
-  const translations = {
-    en: {
-      backButton: "Back",
-      settings: "Settings"
-    },
-    pt: {
-      backButton: "Voltar",
-      settings: "Configurações"
+  // Função para carregar as músicas a partir do JSON
+  function loadSongs() {
+    fetch('songs.json')
+      .then(response => response.json())
+      .then(data => {
+        const songsMenu = document.getElementById('songsMenu');
+        data.songs.forEach(song => {
+          const item = document.createElement('div');
+          item.classList.add('item');
+          item.setAttribute('data-video', song.video);
+          item.innerHTML = `
+            <img src="${song.image}" alt="${song.title}">
+            <div class="title">${song.title}</div>
+            <div class="artist">${song.artist}</div>
+            <div class="edition">${song.edition}</div>
+          `;
+          item.addEventListener('click', function () {
+            const videoElement = document.getElementById('gameplayVideo');
+            const container = document.getElementById('gameplayContainer');
+            videoElement.src = song.video;
+            container.style.display = 'block';
+            videoElement.play();
+            showSettingsButton();
+          });
+          songsMenu.appendChild(item);
+        });
+      })
+      .catch(error => console.error('Erro ao carregar o arquivo JSON:', error));
+  }
+
+  // Funções de controle de vídeo
+  function restartMusic() {
+    const videoPlayer = document.getElementById('gameplayVideo');
+    videoPlayer.currentTime = 0;
+    videoPlayer.play();
+    closeSettingsMenu();
+  }
+
+  function pauseVideo() {
+    const videoPlayer = document.getElementById('gameplayVideo');
+    videoPlayer.pause();
+    closeSettingsMenu();
+  }
+
+  function resumeVideo() {
+    const videoPlayer = document.getElementById('gameplayVideo');
+    videoPlayer.play();
+    closeSettingsMenu();
+  }
+
+  // Função para fechar o vídeo
+  function closeGameplay() {
+    const videoElement = document.getElementById('gameplayVideo');
+    const container = document.getElementById('gameplayContainer');
+    videoElement.pause();
+    videoElement.currentTime = 0;
+    container.style.display = 'none';
+  }
+
+  // Função para voltar ao menu principal
+  function exitGame() {
+    closeGameplay();
+    document.getElementById('songsMenu').scrollIntoView();
+  }
+
+  // Função para redirecionar ao menu após o vídeo terminar
+  function videoEnded() {
+    closeGameplay();
+    document.getElementById('songsMenu').scrollIntoView();
+  }
+
+  // Adiciona o evento de término do vídeo
+  document.getElementById('gameplayVideo').addEventListener('ended', videoEnded);
+
+  // Controle da engrenagem
+  let settingsTimeout;
+
+  function showSettingsButton() {
+    const settingsButton = document.getElementById('settingsButton');
+    settingsButton.classList.remove('hidden');
+    clearTimeout(settingsTimeout);
+    settingsTimeout = setTimeout(() => {
+      settingsButton.classList.add('hidden');
+    }, 10000); // 10 segundos
+  }
+
+  function toggleSettingsMenu() {
+    const settingsMenu = document.getElementById('settingsMenu');
+    settingsMenu.style.display = settingsMenu.style.display === 'block' ? 'none' : 'block';
+  }
+
+  function closeSettingsMenu() {
+    const settingsMenu = document.getElementById('settingsMenu');
+    settingsMenu.style.display = 'none';
+  }
+
+  // Abrir engrenagem com a tecla "M"
+  document.addEventListener('keydown', (event) => {
+    if (event.key.toLowerCase() === 'm') {
+      showSettingsButton();
     }
-  };
-
-  // Função para detectar o idioma do navegador
-  function detectLanguage() {
-    const language = navigator.language || navigator.userLanguage;
-    return language.split('-')[0];
-  }
-
-  // Função para traduzir o conteúdo
-  function translateContent(lang) {
-    const elements = {
-      backButton: document.getElementById("backButton"),
-      settingsButton: document.getElementById("settingsButton")
-    };
-
-    elements.backButton.textContent = translations[lang]?.backButton || translations["en"].backButton;
-    elements.settingsButton.textContent = translations[lang]?.settings || translations["en"].settings;
-  }
-
-  // Inicialização da tradução
-  document.addEventListener("DOMContentLoaded", () => {
-    const userLang = detectLanguage();
-    translateContent(userLang);
   });
 
-  // Função existente
-  function loadSongs() { /* ... */ }
-  function restartMusic() { /* ... */ }
-  function pauseVideo() { /* ... */ }
-  function resumeVideo() { /* ... */ }
-  function closeGameplay() { /* ... */ }
-  function exitGame() { /* ... */ }
-  function toggleSettingsMenu() { /* ... */ }
+  // Carregar as músicas ao carregar a página
+  window.onload = loadSongs;
 </script>
 
 </body>
