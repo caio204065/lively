@@ -11,7 +11,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
       // Define a URL do vídeo e força o carregamento
       gameplayVideo.querySelector("source").src = videoUrl;
-      gameplayVideo.load();
+      gameplayVideo.load();  // Força o carregamento do novo vídeo
 
       // Mostra o container do vídeo
       menu.style.display = "none";
