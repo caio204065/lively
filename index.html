@@ -3,41 +3,49 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Just Dance</title>
+  <title>Just Dance Menu</title>
   <style>
     body {
       margin: 0;
       padding: 0;
-      background-color: #000;
-      color: #fff;
+      background-color: #ffffff;
       font-family: Arial, sans-serif;
+      color: #000;
     }
+
     .menu {
       display: flex;
-      justify-content: center;
-      align-items: center;
       flex-wrap: wrap;
+      justify-content: center;
       gap: 20px;
       padding: 20px;
     }
+
     .item {
       width: 320px;
-      height: 160px;
-      position: relative;
-      border-radius: 10px;
-      overflow: hidden;
+      text-align: center;
       cursor: pointer;
     }
+
     .item img {
       width: 100%;
-      height: 100%;
-      object-fit: cover;
+      border-radius: 10px;
     }
+
+    .title {
+      margin: 10px 0 0;
+      font-size: 1.2em;
+      font-weight: bold;
+    }
+
+    .artist {
+      margin: 5px 0 0;
+      font-size: 1em;
+      color: #555;
+    }
+
     #gameplayContainer {
       display: none;
-      flex-direction: column;
-      justify-content: flex-end;
-      align-items: center;
       position: fixed;
       top: 0;
       left: 0;
@@ -46,6 +54,7 @@
       background-color: #000;
       z-index: 100;
     }
+
     #gameplayVideo {
       position: absolute;
       top: 0;
@@ -54,22 +63,7 @@
       height: 100%;
       object-fit: cover;
     }
-    .info {
-      position: relative;
-      z-index: 10;
-      text-align: center;
-      margin-bottom: 50px;
-    }
-    .info h1 {
-      margin: 0;
-      font-size: 2em;
-      font-weight: bold;
-    }
-    .info h2 {
-      margin: 0;
-      font-size: 1.2em;
-      color: #aaa;
-    }
+
     #backButton {
       position: absolute;
       top: 20px;
@@ -88,28 +82,30 @@
 
 <!-- Menu de músicas -->
 <div class="menu">
-  <div class="item" data-video="https://cdn.glitch.me/a1edb1e1-27cb-4f54-a59c-9ecd7ca713d2/Just%20Dance%202%20-%20Spice%20Up%20Your%20Life%20by%20The%20Spice%20Girls(1080P_HD)(480P).mp4?v=1731715330092" data-title="Spice Up Your Life" data-artist="Spice Girls">
-    <img src="https://cdn.glitch.global/a1edb1e1-27cb-4f54-a59c-9ecd7ca713d2/Spiceup_jdu_cover_generic.png?v=1731714572780" alt="Música 1">
+  <div class="item" data-video="https://cdn.glitch.me/a1edb1e1-27cb-4f54-a59c-9ecd7ca713d2/Just%20Dance%202%20-%20Spice%20Up%20Your%20Life%20by%20The%20Spice%20Girls(1080P_HD)(480P).mp4?v=1731715330092">
+    <img src="https://cdn.glitch.global/a1edb1e1-27cb-4f54-a59c-9ecd7ca713d2/Spiceup_jdu_cover_generic.png?v=1731714572780" alt="Spice">
+    <div class="title">Spice Up Your Life</div>
+    <div class="artist">Spice Girls</div>
   </div>
-  <div class="item" data-video="https://link-para-video-2.webm" data-title="Música 2" data-artist="Artista 2">
+  <div class="item" data-video="https://link-para-video-2.webm">
     <img src="imagens/capa2.jpg" alt="Música 2">
+    <div class="title">Música 2</div>
+    <div class="artist">Artista 2</div>
   </div>
-  <div class="item" data-video="https://link-para-video-3.webm" data-title="Música 3" data-artist="Artista 3">
+  <div class="item" data-video="https://link-para-video-3.webm">
     <img src="imagens/capa3.jpg" alt="Música 3">
+    <div class="title">Música 3</div>
+    <div class="artist">Artista 3</div>
   </div>
 </div>
 
 <!-- Container da gameplay -->
 <div id="gameplayContainer">
   <button id="backButton">Voltar</button>
-  <video id="gameplayVideo" autoplay loop muted>
+  <video id="gameplayVideo" autoplay controls>
     <source src="" type="video/webm">
     Seu navegador não suporta vídeos.
   </video>
-  <div class="info">
-    <h1 id="songTitle"></h1>
-    <h2 id="songArtist"></h2>
-  </div>
 </div>
 
 <script src="script.js"></script>
