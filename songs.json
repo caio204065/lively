@@ -76,6 +76,21 @@
       "edition": "Just Dance 2023",
       "image": "https://cdn.glitch.global/a1edb1e1-27cb-4f54-a59c-9ecd7ca713d2/cantstopthefeeling_cover.jpg?v=1731773815029",
       "video": "https://cdn.glitch.me/a1edb1e1-27cb-4f54-a59c-9ecd7ca713d2/cantstopthefeeling_26259959e6c04e62a544021d1e500c42ff7b9c45_576p.mp4?v=1731773888280"
-    }
+    },
+    {
+  "title": "Macarena",
+  "artist": "The GirlyTeam",
+  "edition": "Just Dance 2015",
+  "image": "https://cdn.glitch.global/f26fabe1-0d65-4a52-b5f1-a029423de2b6/macarena_cover.jpg?v=1731775277926",
+  "video": "https://cdn.glitch.me/f26fabe1-0d65-4a52-b5f1-a029423de2b6/macarena_d0d8f5daa9e1617fbf805117a7f49fca4b874f7f_576p.mp4?v=1731775373735"
+},
+    {
+  "title": "Sax",
+  "artist": "Fleur East",
+  "edition": "Just Dance 2018",
+  "image": "https://cdn.glitch.global/f26fabe1-0d65-4a52-b5f1-a029423de2b6/sax_cover.jpg?v=1731775204981",
+  "video": "https://cdn.glitch.me/f26fabe1-0d65-4a52-b5f1-a029423de2b6/sax_3574b5773dcc4c28a72791225eaa8d3645f83ab2_576p.mp4?v=1731775249025"
+}
+   }
   ]
 }
