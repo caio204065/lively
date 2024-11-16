@@ -24,7 +24,7 @@
     }
 
     .item {
-      width: 280px; /* Ajuste para um tamanho mais compacto */
+      width: 280px;
       text-align: center;
       cursor: pointer;
       border: 4px solid rgba(0, 0, 0, 0);
@@ -93,6 +93,49 @@
       z-index: 10;
     }
 
+    #settingsButton {
+      position: absolute;
+      top: 20px;
+      right: 20px;
+      font-size: 2em;
+      cursor: pointer;
+      z-index: 10;
+      opacity: 0.7; /* Transparência inicial */
+      transition: opacity 0.3s ease;
+    }
+
+    #settingsButton.hidden {
+      opacity: 0; /* Esconde o botão */
+      pointer-events: none;
+    }
+
+    #settingsMenu {
+      position: fixed;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      background: rgba(0, 0, 0, 0.8);
+      padding: 20px;
+      border-radius: 10px;
+      display: none;
+      z-index: 200;
+    }
+
+    #settingsMenu button {
+      display: block;
+      margin: 10px auto;
+      padding: 10px 20px;
+      background: #ff0099;
+      color: white;
+      border: none;
+      border-radius: 5px;
+      font-size: 1em;
+      cursor: pointer;
+    }
+
+    #settingsMenu button:hover {
+      background: #ff3399;
+    }
   </style>
 </head>
 <body>
@@ -104,6 +147,15 @@
 <div id="gameplayContainer">
   <video id="gameplayVideo" autoplay></video>
   <button id="backButton" onclick="closeGameplay()">Voltar</button>
+  <div id="settingsButton" onclick="toggleSettingsMenu()">⚙️</div>
+</div>
+
+<!-- Menu de configurações -->
+<div id="settingsMenu">
+  <button onclick="restartMusic()">Reiniciar Música</button>
+  <button onclick="pauseVideo()">Pausar Música</button>
+  <button onclick="resumeVideo()">Continuar Música</button>
+  <button onclick="exitGame()">Sair para o Menu</button>
 </div>
 
 <script>
@@ -129,11 +181,32 @@
             videoElement.src = song.video;
             container.style.display = 'block';
             videoElement.play();
+            showSettingsButton();
           });
           songsMenu.appendChild(item);
         });
       })
       .catch(error => console.error('Erro ao carregar o arquivo JSON:', error));
+  }
+
+  // Funções de controle de vídeo
+  function restartMusic() {
+    const videoPlayer = document.getElementById('gameplayVideo');
+    videoPlayer.currentTime = 0;
+    videoPlayer.play();
+    closeSettingsMenu();
+  }
+
+  function pauseVideo() {
+    const videoPlayer = document.getElementById('gameplayVideo');
+    videoPlayer.pause();
+    closeSettingsMenu();
+  }
+
+  function resumeVideo() {
+    const videoPlayer = document.getElementById('gameplayVideo');
+    videoPlayer.play();
+    closeSettingsMenu();
   }
 
   // Função para fechar o vídeo
@@ -145,54 +218,44 @@
     container.style.display = 'none';
   }
 
-  // Função para voltar automaticamente ao menu após o término do vídeo
-  document.getElementById('gameplayVideo').addEventListener('ended', function () {
+  // Função para voltar ao menu principal
+  function exitGame() {
     closeGameplay();
+    document.getElementById('songsMenu').scrollIntoView();
+  }
+
+  // Controle da engrenagem
+  let settingsTimeout;
+
+  function showSettingsButton() {
+    const settingsButton = document.getElementById('settingsButton');
+    settingsButton.classList.remove('hidden');
+    clearTimeout(settingsTimeout);
+    settingsTimeout = setTimeout(() => {
+      settingsButton.classList.add('hidden');
+    }, 10000); // 10 segundos
+  }
+
+  function toggleSettingsMenu() {
+    const settingsMenu = document.getElementById('settingsMenu');
+    settingsMenu.style.display = settingsMenu.style.display === 'block' ? 'none' : 'block';
+  }
+
+  function closeSettingsMenu() {
+    const settingsMenu = document.getElementById('settingsMenu');
+    settingsMenu.style.display = 'none';
+  }
+
+  // Abrir engrenagem com a tecla "M"
+  document.addEventListener('keydown', (event) => {
+    if (event.key.toLowerCase() === 'm') {
+      showSettingsButton();
+    }
   });
 
   // Carregar as músicas ao carregar a página
   window.onload = loadSongs;
 </script>
-// Voltar para o menu após o vídeo terminar
-      videoPlayer.onended = () => {
-        goToMenu();
-      };
-    }
 
-    // Função para voltar ao menu
-    function goToMenu() {
-      document.getElementById("menu").style.display = "block";
-      document.getElementById("player").style.display = "none";
-    }
-
-    // Carregar o menu ao iniciar a página
-    window.onload = loadMenu;
-// Função para mostrar ou esconder o menu de configurações
-function toggleSettingsMenu() {
-  const settingsMenu = document.getElementById("settingsMenu");
-  if (settingsMenu.style.display === "none" || settingsMenu.style.display === "") {
-    settingsMenu.style.display = "block";
-  } else {
-    settingsMenu.style.display = "none";
-  }
-}
-
-// Função para pausar o vídeo
-function pauseVideo() {
-  const videoPlayer = document.getElementById("videoPlayer");
-  videoPlayer.pause();
-}
-
-// Função para continuar o vídeo
-function resumeVideo() {
-  const videoPlayer = document.getElementById("videoPlayer");
-  videoPlayer.play();
-}
-
-// Função para sair do jogo (voltar ao menu)
-function exitGame() {
-  goToMenu();
-}
-  </script>
 </body>
 </html>
