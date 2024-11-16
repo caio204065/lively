@@ -8,9 +8,11 @@
     body {
       margin: 0;
       padding: 0;
-      background-color: #ffffff;
+      background-image: url('https://cdn.glitch.global/a1edb1e1-27cb-4f54-a59c-9ecd7ca713d2/more%20bkg4.png?v=1731720647368');
+      background-size: cover;
+      background-position: center;
       font-family: Arial, sans-serif;
-      color: #000;
+      color: #fff;
     }
 
     .menu {
@@ -25,6 +27,16 @@
       width: 320px;
       text-align: center;
       cursor: pointer;
+      border: 4px solid rgba(0, 0, 0, 0); /* Borda transparente */
+      border-radius: 10px;
+      padding: 10px;
+      background-color: rgba(0, 0, 0, 0.6); /* Fundo semi-transparente */
+      transition: transform 0.3s ease; /* Efeito de transição ao passar o mouse */
+    }
+
+    .item:hover {
+      transform: scale(1.05); /* Efeito de zoom ao passar o mouse */
+      border-color: rgba(255, 255, 255, 0.8); /* Borda sutil ao passar o mouse */
     }
 
     .item img {
@@ -33,15 +45,15 @@
     }
 
     .title {
-      margin: 10px 0 0;
+      margin: 10px 0;
       font-size: 1.2em;
       font-weight: bold;
     }
 
     .artist {
-      margin: 5px 0 0;
+      margin: 5px 0;
       font-size: 1em;
-      color: #555;
+      color: #ddd;
     }
 
     #gameplayContainer {
@@ -84,7 +96,7 @@
 <div class="menu">
   <!-- Música 1 -->
   <div class="item" data-video="https://cdn.glitch.me/a1edb1e1-27cb-4f54-a59c-9ecd7ca713d2/Just%20Dance%202%20-%20Spice%20Up%20Your%20Life%20by%20The%20Spice%20Girls(1080P_HD)(480P).mp4?v=1731715330092">
-    <img src="https://cdn.glitch.global/a1edb1e1-27cb-4f54-a59c-9ecd7ca713d2/SpiceUpYourLife.png?v=1731720283324" alt="Música 1">
+    <img src="https://cdn.glitch.global/a1edb1e1-27cb-4f54-a59c-9ecd7ca713d2/Spiceup_jdu_cover_generic.png?v=1731714572780" alt="Música 1">
     <div class="title">Spice Up Your Life</div>
     <div class="artist">The Spice Girls</div>
   </div>
@@ -127,7 +139,25 @@
   </video>
 </div>
 
-<script src="script.js"></script>
+<script>
+  const items = document.querySelectorAll('.item');
+  const gameplayContainer = document.getElementById('gameplayContainer');
+  const gameplayVideo = document.getElementById('gameplayVideo');
+  const backButton = document.getElementById('backButton');
+
+  items.forEach(item => {
+    item.addEventListener('click', () => {
+      const videoSrc = item.getAttribute('data-video');
+      gameplayVideo.src = videoSrc;
+      gameplayContainer.style.display = 'block'; // Exibe o vídeo em tela cheia
+    });
+  });
+
+  backButton.addEventListener('click', () => {
+    gameplayContainer.style.display = 'none'; // Esconde o vídeo e volta ao menu
+    gameplayVideo.pause();
+  });
+</script>
+
 </body>
 </html>
-
