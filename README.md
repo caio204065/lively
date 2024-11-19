@@ -1,2 +1,2 @@
 # lively
-all rights reserved to starzyx
+All rights reserved to Ubisoft
