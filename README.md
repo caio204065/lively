@@ -1,2 +1,2 @@
 # lively
-All rights reserved to Ubisoft
+All Coaches,Clothes Design,Musics and others all rights reserved to Ubisoft
