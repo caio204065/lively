@@ -314,6 +314,20 @@
   "edition": "Just Dance 2015",
   "image": "https://jdnow-api-contentapistoragest.justdancenow.com/songs/BlackWidow_1647267345402/assets/app/blackwidow_cover.jpg",
   "video": "https://mp4.justdancenow.com/blackwidow_b318e2d2d8bfbb01f6ad4bd078f27363fae15be2_576p.mp4?hlscookie=st=1734044418~exp=1735340418~acl=/blackwidow_b318e2d2d8bfbb01f6ad4bd078f27363fae15be2_576p.mp4~hmac=69cd584c53b5660e9ce681eb7736cbbe5d76e08b48bd3f1b62ffe30de6ff4737"
+},
+{
+  "title": "7 Rings",
+  "artist": "Ariana Grande",
+  "edition": "Just Dance 2020",
+  "image": "https://images-ext-1.discordapp.net/external/W1el66GxDMuQXhKJShL3vzL8U1jVmK0pwhHReWYCHuo/https/jdnow-api-contentapistoragest.justdancenow.com/songs/7Rings_1594395282721/assets/app/7rings_cover.jpg",
+  "video": "https://mp4.justdancenow.com/7rings_3a8d81bc667b72d7028265303ddc47d533e4508c_576p.mp4?hlscookie=st=1734148471~exp=1735444471~acl=/7rings_3a8d81bc667b72d7028265303ddc47d533e4508c_576p.mp4~hmac=1b130b54c08b671e36c721652add5914de48a53e41cd4b9ba2aefadd7e05cc30"
+},
+{
+  "title": "7 Rings - EXTREME VERSION",
+  "artist": "Ariana Grande",
+  "edition": "Just Dance 2020",
+  "image": "https://jdnow-api-contentapistoragest.justdancenow.com/songs/7RingsALT_1594395458603/assets/app/7ringsalt_cover.jpg",
+  "video": "https://mp4.justdancenow.com/7ringsalt_37e13e85d6a39cd011701c9167cfb345b8afdf5b_576p.mp4?hlscookie=st=1734148498~exp=1735444498~acl=/7ringsalt_37e13e85d6a39cd011701c9167cfb345b8afdf5b_576p.mp4~hmac=af7ae4783632c1678537d67955fce0cad947efa488266a70886e629981794df9"
 }
   ]
 }
