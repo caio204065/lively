@@ -335,6 +335,13 @@
   "edition": "Just Dance 2016",
   "image": "https://jdnow-api-contentapistoragest.justdancenow.com/songs/Fun_1598521798957/assets/app/fun_cover.jpg",
   "video": "https://mp4.justdancenow.com/fun_cc9161b58f02f64cab9bfe741d3b4687cc7fc8be_576p.mp4?hlscookie=st=1734149058~exp=1735445058~acl=/fun_cc9161b58f02f64cab9bfe741d3b4687cc7fc8be_576p.mp4~hmac=f75d1ec056df977241d6009cec0559f0c3fd9ad71c0dacd8b5024e4c29be670b"
+},
+{
+  "title": "Slumber Party",
+  "artist": "Britney Spears",
+  "edition": "Just Dance 2018",
+  "image": "https://images-ext-1.discordapp.net/external/iRgpNMwtYgEjfcIhxWtWhGD0UKrpMBval9KJXHyfPfE/https/jdhelper-cdn.ramaprojects.ru/jdnext/cover/SlumberParty.png",
+  "video": "https://jd-s3.cdn.ubi.com/private/jdnext/maps/c735c0e3-5f04-4617-bbe4-375800a50faa/video_ULTRA.vp9.webm/1b33f67ba74f7d103b341bc9ac55e5bf.webm?auth=exp=1734240117~acl=/private/jdnext/maps/c735c0e3-5f04-4617-bbe4-375800a50faa/*~hmac=edb9900cac447262d866a45e01046a9241641224540e8fe70f336aa44ed3e03b"
 }
   ]
 }
