@@ -405,6 +405,13 @@
   "edition": "Just Dance 1",
   "image": "https://jdnow-api-contentapistoragest.justdancenow.com/songs/Acceptable_1597235674190/assets/app/acceptable_cover.jpg",
   "video": "https://mp4.justdancenow.com/acceptable_4d408d1695912c6d0ede654c27c296e14a9700d3_576p.mp4?hlscookie=st=1734654118~exp=1735950118~acl=/acceptable_4d408d1695912c6d0ede654c27c296e14a9700d3_576p.mp4~hmac=9ea697650ba6874fa64d2cb17bf26aa8610b6020ccb1797f4d99ba44d94f392c"
+},
+    {
+  "title": "Firework",
+  "artist": "Katy Perry",
+  "edition": "Just Dance 2",
+  "image": "https://firebasestorage.googleapis.com/v0/b/just-dance-now-luna.appspot.com/o/firework_cover.jpg?alt=media&token=5442eaae-6bd0-48b1-885f-4764f6589613",
+  "video": "https://firebasestorage.googleapis.com/v0/b/just-dance-now-luna.appspot.com/o/firework_89eedd1fd50ab33adec07b6b0daa1cdf592a671b_576p.mp4?alt=media&token=48a0503d-048d-4b6f-ac23-c7807675d0de"
 }
   ]
 }
