@@ -433,6 +433,13 @@
   "edition": "Just Dance 2017",
   "image": "https://firebasestorage.googleapis.com/v0/b/just-dance-now-luna.appspot.com/o/Song_Cover%2Fpopipo_cover.jpg?alt=media&token=3ce35e65-0565-485d-b072-e9a247368cc9",
   "video": "https://firebasestorage.googleapis.com/v0/b/just-dance-now-luna.appspot.com/o/NoHud_Lively%2Fpopipo_576p.mp4?alt=media&token=e210a4ef-566c-43dc-9e1c-6fb899434417"
+},
+  {
+  "title": "Drum Go Dum",
+  "artist": "K/DA",
+  "edition": "Just Dance 2021",
+  "image": "https://jdnow-api-contentapistoragest.justdancenow.com/songs/KDance_1613500733136/assets/app/kdance_cover.jpg",
+  "video": "https://mp4.justdancenow.com/kdance_85da4ed5539ad5e3e52371b6a01d530c367c631d_576p.mp4?hlscookie=st=1734906764~exp=1736202764~acl=/kdance_85da4ed5539ad5e3e52371b6a01d530c367c631d_576p.mp4~hmac=c23803580176f94814c5869834bf144beed7826df6f1503a36a1c15dedd373cf"
 }
   ]
 }
