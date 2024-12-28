@@ -440,6 +440,13 @@
   "edition": "Just Dance 2021",
   "image": "https://jdnow-api-contentapistoragest.justdancenow.com/songs/KDance_1613500733136/assets/app/kdance_cover.jpg",
   "video": "https://mp4.justdancenow.com/kdance_85da4ed5539ad5e3e52371b6a01d530c367c631d_576p.mp4?hlscookie=st=1734906764~exp=1736202764~acl=/kdance_85da4ed5539ad5e3e52371b6a01d530c367c631d_576p.mp4~hmac=c23803580176f94814c5869834bf144beed7826df6f1503a36a1c15dedd373cf"
+},
+ {
+  "title": "The Way",
+  "artist": "Ariana Grande Ft. Mac Miller",
+  "edition": "Just Dance 2014",
+  "image": "https://images-ext-1.discordapp.net/external/pxr3aVlSihVvC3S_C60LCF6u2oHaJBHGcxTlecsw6mg/https/jdnow-api-contentapistoragest.justdancenow.com/songs/TheWay_1598551201370/assets/app/theway_cover.jpg",
+  "video": "https://mp4.justdancenow.com/theway_59bc6625bcde666476434023e0533084542c9f63_576p.mp4?hlscookie=st=1735336753~exp=1736632753~acl=/theway_59bc6625bcde666476434023e0533084542c9f63_576p.mp4~hmac=af26c186bd2ab51a72f382356f3b3e42c2b30451a32ab10e839390f0cf064b0c"
 }
   ]
 }
