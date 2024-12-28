@@ -17,10 +17,10 @@
 
     .menu {
       display: grid;
-      grid-template-columns: repeat(4, 1fr); /* 4 colunas */
-      gap: 20px; /* Espaço entre os itens */
+      grid-template-columns: repeat(4, 1fr);
+      gap: 20px;
       padding: 20px;
-      justify-items: center; /* Alinha os itens no centro */
+      justify-items: center;
     }
 
     .item {
@@ -57,7 +57,7 @@
     }
 
     .edition {
-      color: #ff0099; /* Cor da edição */
+      color: #ff0099;
     }
 
     #gameplayContainer {
@@ -100,12 +100,12 @@
       font-size: 2em;
       cursor: pointer;
       z-index: 10;
-      opacity: 0.7; /* Transparência inicial */
+      opacity: 0.7;
       transition: opacity 0.3s ease;
     }
 
     #settingsButton.hidden {
-      opacity: 0; /* Esconde o botão */
+      opacity: 0;
       pointer-events: none;
     }
 
@@ -136,21 +136,80 @@
     #settingsMenu button:hover {
       background: #ff3399;
     }
+
+    .avatar-bars {
+      position: absolute;
+      top: 20px;
+      left: 50%;
+      transform: translateX(-50%);
+      display: flex;
+      gap: 20px;
+      z-index: 10;
+    }
+
+    .avatar-bar {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      background: rgba(0, 0, 0, 0.7);
+      border-radius: 20px;
+      padding: 5px 10px;
+    }
+
+    .avatar-bar img {
+      width: 40px;
+      height: 40px;
+      border-radius: 50%;
+    }
+
+    .avatar-bar .bar {
+      height: 10px;
+      width: 150px;
+      background: #555;
+      border-radius: 10px;
+      overflow: hidden;
+      position: relative;
+    }
+
+    .avatar-bar .bar .fill {
+      height: 100%;
+      background: #ff0099;
+      width: 50%; /* Tamanho inicial da barra */
+    }
   </style>
 </head>
 <body>
 
-<!-- Menu de músicas -->
 <div class="menu" id="songsMenu"></div>
 
-<!-- Container de gameplay -->
 <div id="gameplayContainer">
   <video id="gameplayVideo" autoplay></video>
   <button id="backButton" onclick="closeGameplay()">back</button>
   <div id="settingsButton" onclick="toggleSettingsMenu()">⚙️</div>
+
+  <!-- Avatar Bars -->
+  <div class="avatar-bars" id="avatarBars">
+    <div class="avatar-bar">
+      <img src="https://jdnow-api-contentapistoragest.justdancenow.com/avatars/1898.png" alt="Avatar 1">
+      <div class="bar">
+        <div class="fill"></div>
+      </div>
+    </div>
+    <div class="avatar-bar">
+      <img src="https://jdnow-api-contentapistoragest.justdancenow.com/avatars/1265.png" alt="Avatar 2">
+      <div class="bar">
+        <div class="fill"></div>
+      </div>
+    </div>
+    <div class="avatar-bar">
+      <img src="https://jdnow-api-contentapistoragest.justdancenow.com/avatars/33.png" alt="Avatar 3">
+      <div class="bar">
+        <div class="fill"></div>
+      </div>
+    </div>
+  </div>
 </div>
 
-<!-- Menu de configurações -->
 <div id="settingsMenu">
   <button onclick="restartMusic()">Reset Song</button>
   <button onclick="pauseVideo()">Pause Song</button>
@@ -159,7 +218,6 @@
 </div>
 
 <script>
-  // Função para carregar as músicas a partir do JSON
   function loadSongs() {
     fetch('songs.json')
       .then(response => response.json())
@@ -182,6 +240,7 @@
             container.style.display = 'block';
             videoElement.play();
             showSettingsButton();
+            showAvatarBars();
           });
           songsMenu.appendChild(item);
         });
@@ -189,27 +248,11 @@
       .catch(error => console.error('Erro ao carregar o arquivo JSON:', error));
   }
 
-  // Funções de controle de vídeo
-  function restartMusic() {
-    const videoPlayer = document.getElementById('gameplayVideo');
-    videoPlayer.currentTime = 0;
-    videoPlayer.play();
-    closeSettingsMenu();
+  function showAvatarBars() {
+    const avatarBars = document.getElementById('avatarBars');
+    avatarBars.style.display = 'flex';
   }
 
-  function pauseVideo() {
-    const videoPlayer = document.getElementById('gameplayVideo');
-    videoPlayer.pause();
-    closeSettingsMenu();
-  }
-
-  function resumeVideo() {
-    const videoPlayer = document.getElementById('gameplayVideo');
-    videoPlayer.play();
-    closeSettingsMenu();
-  }
-
-  // Função para fechar o vídeo
   function closeGameplay() {
     const videoElement = document.getElementById('gameplayVideo');
     const container = document.getElementById('gameplayContainer');
@@ -218,53 +261,8 @@
     container.style.display = 'none';
   }
 
-  // Função para voltar ao menu principal
-  function exitGame() {
-    closeGameplay();
-    document.getElementById('songsMenu').scrollIntoView();
-  }
-
-  // Função para redirecionar ao menu após o vídeo terminar
-  function videoEnded() {
-    closeGameplay();
-    document.getElementById('songsMenu').scrollIntoView();
-  }
-
-  // Adiciona o evento de término do vídeo
-  document.getElementById('gameplayVideo').addEventListener('ended', videoEnded);
-
-  // Controle da engrenagem
-  let settingsTimeout;
-
-  function showSettingsButton() {
-    const settingsButton = document.getElementById('settingsButton');
-    settingsButton.classList.remove('hidden');
-    clearTimeout(settingsTimeout);
-    settingsTimeout = setTimeout(() => {
-      settingsButton.classList.add('hidden');
-    }, 10000); // 10 segundos
-  }
-
-  function toggleSettingsMenu() {
-    const settingsMenu = document.getElementById('settingsMenu');
-    settingsMenu.style.display = settingsMenu.style.display === 'block' ? 'none' : 'block';
-  }
-
-  function closeSettingsMenu() {
-    const settingsMenu = document.getElementById('settingsMenu');
-    settingsMenu.style.display = 'none';
-  }
-
-  // Abrir engrenagem com a tecla "M"
-  document.addEventListener('keydown', (event) => {
-    if (event.key.toLowerCase() === 'm') {
-      showSettingsButton();
-    }
-  });
-
-  // Carregar as músicas ao carregar a página
   window.onload = loadSongs;
 </script>
 
 </body>
-</html> 
+</html>
