@@ -176,6 +176,18 @@
       background: #ff0099;
       width: 50%; /* Tamanho inicial da barra */
     }
+
+    .racetrack {
+      position: absolute;
+      top: 50%;
+      left: 0;
+      transform: translateY(-50%);
+      width: 100px;
+      height: 50%;
+      background: url('https://jdnowweb-s.cdn.ubi.com/prod/main/20241227_0642/web/img/hud/racetrack-bg.png') no-repeat center center;
+      background-size: cover;
+      z-index: 15;
+    }
   </style>
 </head>
 <body>
@@ -190,13 +202,13 @@
   <!-- Avatar Bars -->
   <div class="avatar-bars" id="avatarBars">
     <div class="avatar-bar">
-      <img src="https://jdnow-api-contentapistoragest.justdancenow.com/avatars/1898.png" alt="Avatar 1">
+      <img src="https://jdnow-api-contentapistoragest.justdancenow.com/avatars/1265.png" alt="Avatar 1">
       <div class="bar">
         <div class="fill"></div>
       </div>
     </div>
     <div class="avatar-bar">
-      <img src="https://jdnow-api-contentapistoragest.justdancenow.com/avatars/1265.png" alt="Avatar 2">
+      <img src="https://jdnow-api-contentapistoragest.justdancenow.com/avatars/117.png" alt="Avatar 2">
       <div class="bar">
         <div class="fill"></div>
       </div>
@@ -208,6 +220,9 @@
       </div>
     </div>
   </div>
+
+  <!-- Racetrack -->
+  <div class="racetrack"></div>
 </div>
 
 <div id="settingsMenu">
@@ -234,13 +249,7 @@
             <div class="edition">${song.edition}</div>
           `;
           item.addEventListener('click', function () {
-            const videoElement = document.getElementById('gameplayVideo');
-            const container = document.getElementById('gameplayContainer');
-            videoElement.src = song.video;
-            container.style.display = 'block';
-            videoElement.play();
-            showSettingsButton();
-            showAvatarBars();
+            startGameplay(song.video);
           });
           songsMenu.appendChild(item);
         });
@@ -248,9 +257,15 @@
       .catch(error => console.error('Erro ao carregar o arquivo JSON:', error));
   }
 
-  function showAvatarBars() {
-    const avatarBars = document.getElementById('avatarBars');
-    avatarBars.style.display = 'flex';
+  function startGameplay(videoSrc) {
+    const videoElement = document.getElementById('gameplayVideo');
+    const container = document.getElementById('gameplayContainer');
+    videoElement.src = videoSrc;
+    container.style.display = 'block';
+    videoElement.play();
+    videoElement.onended = closeGameplay;
+    showSettingsButton();
+    showAvatarBars();
   }
 
   function closeGameplay() {
@@ -259,6 +274,42 @@
     videoElement.pause();
     videoElement.currentTime = 0;
     container.style.display = 'none';
+    document.getElementById('settingsMenu').style.display = 'none';
+  }
+
+  function toggleSettingsMenu() {
+    const settingsMenu = document.getElementById('settingsMenu');
+    settingsMenu.style.display = settingsMenu.style.display === 'block' ? 'none' : 'block';
+  }
+
+  function showAvatarBars() {
+    const avatarBars = document.getElementById('avatarBars');
+    avatarBars.style.display = 'flex';
+  }
+
+  function showSettingsButton() {
+    const settingsButton = document.getElementById('settingsButton');
+    settingsButton.classList.remove('hidden');
+  }
+
+  function restartMusic() {
+    const videoElement = document.getElementById('gameplayVideo');
+    videoElement.currentTime = 0;
+    videoElement.play();
+  }
+
+  function pauseVideo() {
+    const videoElement = document.getElementById('gameplayVideo');
+    videoElement.pause();
+  }
+
+  function resumeVideo() {
+    const videoElement = document.getElementById('gameplayVideo');
+    videoElement.play();
+  }
+
+  function exitGame() {
+    closeGameplay();
   }
 
   window.onload = loadSongs;
