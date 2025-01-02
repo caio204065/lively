@@ -453,24 +453,7 @@
   "artist": "Ariana Grande",
   "edition": "Just Dance 2015",
   "image": "https://firebasestorage.googleapis.com/v0/b/just-dance-now-luna.appspot.com/o/Song_Cover%2Fbreakfreedlc_cover.jpg?alt=media&token=564c26b0-1e90-4355-aa3f-a547aa923b9f",
-  "video": "https://firebasestorage.googleapis.com/v0/b/just-dance-now-luna.appspot.com/o/NoHud_Lively%2Fbreakfreedlc_3193fa27ea1eae2c6142b94f070bfaa0aeae050a_576p.mp4?alt=media&token=18bf1162-337d-46fc-abf8-eb55f581e85a",
-  "lyricsColor": "#1E1E1E",  
-  "videoOffset": 1846,
-  "lyrics": [
-        {
-          "time": 5000,  
-          "duration": 2000, 
-          "text": "Make you mine",
-          "isLineEnding": 1
-        },
-        {
-          "time": 8000,
-          "duration": 2000,
-          "text": "I'm ready now",
-          "isLineEnding": 1
-        }
-      ],
-      "videoOffset": 0
-    }
-  ]
+  "video": "https://firebasestorage.googleapis.com/v0/b/just-dance-now-luna.appspot.com/o/NoHud_Lively%2Fbreakfreedlc_3193fa27ea1eae2c6142b94f070bfaa0aeae050a_576p.mp4?alt=media&token=18bf1162-337d-46fc-abf8-eb55f581e85a"
+}
+]
 }
