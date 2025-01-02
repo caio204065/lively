@@ -447,6 +447,30 @@
   "edition": "Just Dance 2014",
   "image": "https://images-ext-1.discordapp.net/external/pxr3aVlSihVvC3S_C60LCF6u2oHaJBHGcxTlecsw6mg/https/jdnow-api-contentapistoragest.justdancenow.com/songs/TheWay_1598551201370/assets/app/theway_cover.jpg",
   "video": "https://mp4.justdancenow.com/theway_59bc6625bcde666476434023e0533084542c9f63_576p.mp4?hlscookie=st=1735336753~exp=1736632753~acl=/theway_59bc6625bcde666476434023e0533084542c9f63_576p.mp4~hmac=af26c186bd2ab51a72f382356f3b3e42c2b30451a32ab10e839390f0cf064b0c"
-}
+},
+{
+  "title": "Break Free",
+  "artist": "Ariana Grande",
+  "edition": "Just Dance 2015",
+  "image": "https://firebasestorage.googleapis.com/v0/b/just-dance-now-luna.appspot.com/o/Song_Cover%2Fbreakfreedlc_cover.jpg?alt=media&token=564c26b0-1e90-4355-aa3f-a547aa923b9f",
+  "video": "https://firebasestorage.googleapis.com/v0/b/just-dance-now-luna.appspot.com/o/NoHud_Lively%2Fbreakfreedlc_3193fa27ea1eae2c6142b94f070bfaa0aeae050a_576p.mp4?alt=media&token=18bf1162-337d-46fc-abf8-eb55f581e85a",
+  "lyricsColor": "#1E1E1E",  
+  "videoOffset": 1846,
+  "lyrics": [
+        {
+          "time": 5000,  
+          "duration": 2000, 
+          "text": "Make you mine",
+          "isLineEnding": 1
+        },
+        {
+          "time": 8000,
+          "duration": 2000,
+          "text": "I'm ready now",
+          "isLineEnding": 1
+        }
+      ],
+      "videoOffset": 0
+    }
   ]
 }

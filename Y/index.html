@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Lively</title>
+  <meta http-equiv="Content-Security-Policy" content="script-src 'self' 'unsafe-eval'">
+  <style>
+    body {
+      margin: 0;
+      padding: 0;
+      background-image: url('https://cdn.glitch.global/a1edb1e1-27cb-4f54-a59c-9ecd7ca713d2/more%20bkg4.png?v=1731720647368');
+      background-size: cover;
+      background-position: center;
+      font-family: Arial, sans-serif;
+      color: #fff;
+    }
+
+    #gameplayContainer {
+      display: none;
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background-color: #000;
+      z-index: 100;
+    }
+
+    #gameplayVideo {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
+
+    #lyrics {
+      position: absolute;
+      top: 40%;
+      left: 50%;
+      transform: translateX(-50%);
+      font-size: 3em;
+      color: #fff;
+      font-family: 'Just Dance', sans-serif;
+      text-align: center;
+      opacity: 0;
+      z-index: 200;
+      padding: 10px;
+      background-color: rgba(0, 0, 0, 0.6); /* Fundo escuro com transparência */
+      border-radius: 10px;
+      width: 80%;
+    }
+
+    #backButton {
+      position: absolute;
+      top: 20px;
+      left: 20px;
+      padding: 10px 20px;
+      background: #ff0099;
+      color: #fff;
+      border: none;
+      border-radius: 5px;
+      cursor: pointer;
+      z-index: 10;
+    }
+  </style>
+</head>
+<body>
+
+<div id="gameplayContainer">
+  <video id="gameplayVideo" autoplay></video>
+  <button id="backButton" onclick="closeGameplay()">back</button>
+
+  <!-- Lyrics -->
+  <div id="lyrics"></div>
+
+</div>
+
+<script>
+  let videoElement = document.getElementById('gameplayVideo');
+  let lyricsElement = document.getElementById('lyrics');
+  let lyricsData = [];
+  let currentLyricIndex = 0;
+
+  function loadSongs() {
+    fetch('songs.json')
+      .then(response => response.json())
+      .then(data => {
+        const song = data.songs[0]; // Assume apenas um item, ajuste conforme necessário
+        startGameplay(song.video, song.lyrics, song.videoOffset);
+      })
+      .catch(error => console.error('Erro ao carregar o arquivo JSON:', error));
+  }
+
+  function startGameplay(videoSrc, lyrics, videoOffset) {
+    videoElement.src = videoSrc;
+    document.getElementById('gameplayContainer').style.display = 'block';
+    videoElement.play();
+    videoElement.onended = closeGameplay;
+
+    lyricsData = lyrics;
+    currentLyricIndex = 0;
+
+    // Chama a função de atualização de letras a cada 100ms
+    setInterval(() => updateLyrics(videoOffset), 100);
+  }
+
+  function updateLyrics(videoOffset) {
+    const videoTime = videoElement.currentTime * 1000; // Convertido para milissegundos
+
+    if (currentLyricIndex < lyricsData.length) {
+      const currentLyric = lyricsData[currentLyricIndex];
+
+      // Condição de exibição da letra com base no tempo, agora comparando corretamente com milissegundos
+      const lyricStartTime = currentLyric.time + videoOffset;
+      const lyricEndTime = currentLyric.time + currentLyric.duration + videoOffset;
+
+      // Verificar se o tempo do vídeo está dentro do intervalo da letra
+      if (videoTime >= lyricStartTime && videoTime < lyricEndTime) {
+        lyricsElement.innerText = currentLyric.text;
+        lyricsElement.style.opacity = 1;
+      }
+
+      if (videoTime >= lyricEndTime) {
+        lyricsElement.style.opacity = 0;
+        currentLyricIndex++;
+      }
+    }
+  }
+
+  function closeGameplay() {
+    videoElement.pause();
+    videoElement.currentTime = 0;
+    document.getElementById('gameplayContainer').style.display = 'none';
+  }
+
+  window.onload = loadSongs;
+</script>
+
+</body>
+</html>
