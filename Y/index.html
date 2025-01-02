@@ -241,15 +241,20 @@
         data.songs.forEach(song => {
           const item = document.createElement('div');
           item.classList.add('item');
-          item.setAttribute('data-video', song.video);
+
+          // Fetch image and video from bundle.zip if null
+          const videoPath = song.video || `bundle/${song.title}/video.mp4`;
+          const imagePath = song.image || `bundle/${song.title}/cover.jpg`;
+
+          item.setAttribute('data-video', videoPath);
           item.innerHTML = `
-            <img src="${song.image}" alt="${song.title}">
+            <img src="${imagePath}" alt="${song.title}">
             <div class="title">${song.title}</div>
             <div class="artist">${song.artist}</div>
             <div class="edition">${song.edition}</div>
           `;
           item.addEventListener('click', function () {
-            startGameplay(song.video);
+            startGameplay(videoPath);
           });
           songsMenu.appendChild(item);
         });
