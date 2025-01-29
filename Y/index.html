@@ -4,6 +4,7 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Lively</title>
+  <link rel="icon" href="https://firebasestorage.googleapis.com/v0/b/just-dance-now-luna.appspot.com/o/Icons_%2FLIVELY.png?alt=media&token=9ddc0e0c-4a4f-46c2-b4fb-076972f9b687" type="image/png">
   <style>
     body {
       margin: 0;
@@ -174,7 +175,7 @@
     .avatar-bar .bar .fill {
       height: 100%;
       background: #ff0099;
-      width: 50%; /* Tamanho inicial da barra */
+      width: 50%;
     }
 
     .racetrack {
@@ -199,7 +200,6 @@
   <button id="backButton" onclick="closeGameplay()">back</button>
   <div id="settingsButton" onclick="toggleSettingsMenu()">⚙️</div>
 
-  <!-- Avatar Bars -->
   <div class="avatar-bars" id="avatarBars">
     <div class="avatar-bar">
       <img src="https://jdnow-api-contentapistoragest.justdancenow.com/avatars/75.png" alt="Avatar 1">
@@ -221,7 +221,6 @@
     </div>
   </div>
 
-  <!-- Racetrack -->
   <div class="racetrack"></div>
 </div>
 
@@ -232,6 +231,8 @@
   <button onclick="exitGame()">Exit Game</button>
 </div>
 
+<script src="https://cdn.jsdelivr.net/npm/jszip@3.7.1/dist/jszip.min.js"></script>
+
 <script>
   function loadSongs() {
     fetch('songs.json')
@@ -241,15 +242,20 @@
         data.songs.forEach(song => {
           const item = document.createElement('div');
           item.classList.add('item');
-          item.setAttribute('data-video', song.video);
+
+          // Fetch image and video from bundle.zip if null
+          const videoPath = song.video || `bundle/${song.title}/video.mp4`;
+          const imagePath = song.image || `bundle/${song.title}/cover.jpg`;
+
+          item.setAttribute('data-video', videoPath);
           item.innerHTML = `
-            <img src="${song.image}" alt="${song.title}">
+            <img src="${imagePath}" alt="${song.title}">
             <div class="title">${song.title}</div>
             <div class="artist">${song.artist}</div>
             <div class="edition">${song.edition}</div>
           `;
           item.addEventListener('click', function () {
-            startGameplay(song.video);
+            startGameplay(videoPath);
           });
           songsMenu.appendChild(item);
         });
@@ -257,13 +263,28 @@
       .catch(error => console.error('Erro ao carregar o arquivo JSON:', error));
   }
 
-  function startGameplay(videoSrc) {
+  async function startGameplay(videoSrc) {
     const videoElement = document.getElementById('gameplayVideo');
     const container = document.getElementById('gameplayContainer');
-    videoElement.src = videoSrc;
+
+    // Fetch the video and image from ZIP bundle if not found
+    const zipUrl = 'https://firebasestorage.googleapis.com/v0/b/just-dance-now-luna.appspot.com/o/Lively_BUNDLES%2Fwhitenoise_bundle.zip?alt=media&token=ab518e68-3cbe-40fd-a7b1-e0eabfd15940';
+    const response = await fetch(zipUrl);
+    const zipBlob = await response.blob();
+    const zip = await JSZip.loadAsync(zipBlob);
+
+    const videoFile = await zip.file('songs/whitenoise.mp4').async('base64');
+    const imageFile = await zip.file('cover/whitenoise_cover.jpg').async('base64');
+
+    videoElement.src = `data:video/mp4;base64,${videoFile}`;
     container.style.display = 'block';
     videoElement.play();
     videoElement.onended = closeGameplay;
+
+    // Display the image as a placeholder while loading
+    const imgElement = document.querySelector('.item img');
+    imgElement.src = `data:image/jpeg;base64,${imageFile}`;
+
     showSettingsButton();
     showAvatarBars();
   }

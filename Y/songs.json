@@ -452,8 +452,31 @@
   "title": "Break Free",
   "artist": "Ariana Grande",
   "edition": "Just Dance 2015",
-  "image": "https://firebasestorage.googleapis.com/v0/b/just-dance-now-luna.appspot.com/o/Song_Cover%2Fbreakfreedlc_cover.jpg?alt=media&token=564c26b0-1e90-4355-aa3f-a547aa923b9f",
-  "video": "https://firebasestorage.googleapis.com/v0/b/just-dance-now-luna.appspot.com/o/NoHud_Lively%2Fbreakfreedlc_3193fa27ea1eae2c6142b94f070bfaa0aeae050a_576p.mp4?alt=media&token=18bf1162-337d-46fc-abf8-eb55f581e85a"
+  "image": null,
+  "video": null,
+  "bundleZip": "https://firebasestorage.googleapis.com/v0/b/just-dance-now-luna.appspot.com/o/Lively_BUNDLES%2Fbreakfree_bundle.zip?alt=media&token=cb7447a8-fa3b-474b-9853-62dcba183c9f",
+  "gameplayVideoPath": "videos/breakfree.mp4",
+  "imageInBundlePath": "cover/breakfreedlc_cover.jpg"
+},
+{
+  "title": "E.T",
+  "artist": "Katy Perry",
+  "edition": "Just Dance 3",
+  "image": null,
+  "video": null,
+  "bundleZip": "https://firebasestorage.googleapis.com/v0/b/just-dance-now-luna.appspot.com/o/Lively_BUNDLES%2Fet_bundle.zip?alt=media&token=3eee7f1e-5709-45ad-9659-9c347ab159a7",
+  "gameplayVideoPath": "et_bundle/videos/ET.mp4",
+  "imageInBundlePath": "et_bundle/cover/ET_cover.jpg"
+},
+{
+  "title": "White Noise",
+  "artist": "Disclosure Ft. AlunaGeorge",
+  "edition": "Just Dance 2021",
+  "image": null,
+  "video": null,
+  "bundleZip": "https://firebasestorage.googleapis.com/v0/b/just-dance-now-luna.appspot.com/o/Lively_BUNDLES%2Fwhitenoise_bundle.zip?alt=media&token=ab518e68-3cbe-40fd-a7b1-e0eabfd15940",
+  "gameplayVideoPath": "whitenoise_bundlevideos/whitenoise.mp4",
+  "imageInBundlePath": "whitenoise_bundle/cover/whitenoise_cover.jpg"
 }
-]
+  ]
 }
