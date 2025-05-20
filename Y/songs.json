@@ -477,6 +477,13 @@
   "bundleZip": "https://firebasestorage.googleapis.com/v0/b/just-dance-now-luna.appspot.com/o/Lively_BUNDLES%2Fwhitenoise_bundle.zip?alt=media&token=ab518e68-3cbe-40fd-a7b1-e0eabfd15940",
   "gameplayVideoPath": "whitenoise_bundlevideos/whitenoise.mp4",
   "imageInBundlePath": "whitenoise_bundle/cover/whitenoise_cover.jpg"
+},
+{
+      "title": "Me And My Broken Heart",
+      "artist": "Rixton",
+      "edition": "Just Dance 2015 ",
+      "image": "https://pub-a009e9ce77ba4588b1c701c9eac520fb.r2.dev/BrokenHeart/brokenheart_cover.jpg",
+      "video": "https://pub-a009e9ce77ba4588b1c701c9eac520fb.r2.dev/BrokenHeart/brokenheart_35d645a7a7447fbd63839b2d4967ad4311e8f7f0_576p.mp4"
 }
   ]
 }
