@@ -1,5 +1,5 @@
 # lively
-Lively is a (re)creation of Just Dance Now (https://justdancenow.com) made by Ubisoft Entertaiment inc in 2014 wich have all the rights of coaches,songs & background © Ubisoft Entertaiment Inc 2014-2025
+Lively is a (re)creation of Just Dance Now (https://justdancenow.com) made by Ubisoft Entertaiment inc in 2014 which have all the rights of coaches,songs & background © Ubisoft Entertaiment Inc 2014-2025
 
 All Coaches,Clothes Design,Musics and others all rights reserved to Ubisoft
 Leaking or Sharing anything that is into this code will get you in big troubles 
